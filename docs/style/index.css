@@ -1,17 +1,25 @@
 html {
-    font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
+    background-color: #131B23;
     margin: 0px;
 }
 
 .top-bar {
+    display: flex;
+    flex-direction: row;
     margin: 0px;
-    padding: 0px;
-    background-color: lightblue;
+    padding: 0.75rem;
+    height: 3.25rem;
+    background-color: #33477E;
     position: sticky;
     top: 0;
+    z-index: 100;
+    align-items: center;
+    color: #DEE5E5;
+    font-family: "Inter";
 }
 
 .top-bar > * {
@@ -25,48 +33,96 @@ body {
 }
 
 .hero {
-    background-color: green;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-evenly;
 }
 
 .hero > * {
     padding: 0px;
+    margin: 1rem;
 }
 
 .hero .text {
-    background-color: red;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 28rem;
+    flex-basis: 21rem;
     overflow-wrap: break-word;
-    min-width: 28rem;
+    min-width: 21rem;
 }
 
 .hero .text > * {
     padding: 0px;
     margin: 0px;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: "Inter";
+    line-height: 6rem;
+    color: #DEE5E5;
 }
 
-.hero .image > img {
-    width: 300px;
+.hero .text > span {
+    font-weight: lighter;
+}
+
+.hero .text .name {
+    font-family: "Inter";
+    font-weight: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+}
+
+.hero .text .hero-paragraph {
+    line-height: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 0px;
+}
+
+.hero .collage {
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    padding: 0rem, 1rem, 0rem, 1rem;
+    gap: 1rem;
+}
+
+.hero .collage > img {
+    max-width: 28rem;
+    width: auto;
     height: auto;
     border-radius: 40px;
     corner-shape: squircle;
+    min-width: 0;
+}
+
+.hero .collage .collage-stack {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    gap: 1rem;
+}
+
+.hero .collage .collage-stack > img {
+    max-width: 20.615rem;
+    width: auto;
+    height: auto;
+    border-radius: 40px;
+    corner-shape: squircle;
+    min-width: 0;
 }
 
 .hello {
-    font-family: "Source Han Sans", "Noto Sans", sans-serif;
-    line-height: 1.7;
+    font-family: "Inter";
+    font-weight: lighter;
 }
 
 .hello::after {
     content: "Hello,";
     animation: helloAnimation 10s infinite cubic-bezier(0.11, 0, 0.5, 0);
+    z-index: 0;
 }
 
 @keyframes helloAnimation {
@@ -129,4 +185,9 @@ body {
     78% {
         opacity: 1;
     }
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets//fonts//Inter-4.1/InterVariable.ttf");
 }
