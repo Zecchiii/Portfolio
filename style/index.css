@@ -1,0 +1,132 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+.top-bar {
+    margin: 0px;
+    padding: 0px;
+    background-color: lightblue;
+    position: sticky;
+    top: 0;
+}
+
+.top-bar > * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero > * {
+    padding: 0px;
+}
+
+.hero .text {
+    background-color: red;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 28rem;
+    overflow-wrap: break-word;
+    min-width: 28rem;
+}
+
+.hero .text > * {
+    padding: 0px;
+    margin: 0px;
+    font-size: 3rem;
+}
+
+.hero .image > img {
+    width: 300px;
+    height: auto;
+    border-radius: 40px;
+    corner-shape: squircle;
+}
+
+.hello {
+    font-family: "Source Han Sans", "Noto Sans", sans-serif;
+    line-height: 1.7;
+}
+
+.hello::after {
+    content: "Hello,";
+    animation: helloAnimation 10s infinite cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes helloAnimation {
+    90% {
+        opacity: 1;
+    }
+    92% {
+        opacity: 0;
+    }
+    100% {
+        content: "Hello,";
+    }
+    0% {
+        content: "Hello,";
+    }
+    3% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 1;
+    }
+    
+
+    17% {
+        opacity: 0;
+    }
+    25% {
+        content: "こんにちは,";
+    }
+    28% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    42% {
+        opacity: 0;
+    }
+    50% {
+        content: "Kumusta,";
+    }
+    53% {
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    
+    67% {
+        opacity: 0;
+    }
+    75% {
+        content: "안녕,";
+    }
+    78% {
+        opacity: 1;
+    }
+}
