@@ -56,14 +56,22 @@ body {
 .hero .text > * {
     padding: 0px;
     margin: 0px;
-    font-size: 4rem;
+    font-size: 4.35rem;
     font-family: "Inter";
     line-height: 6rem;
     color: #DEE5E5; 
 }
 
+@media (orientation: portrait) {
+    .hero .text {
+        justify-content: center;
+        padding: 2rem;
+    }
+}
+
 .hero .text > span {
     font-weight: lighter;
+    line-height: 5rem;
 }
 
 .hero .text .name {
@@ -73,11 +81,38 @@ body {
     text-decoration-thickness: 0.2rem;
 }
 
+.hero .text .title-showcase {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    max-height: 1rem;
+    align-content: center;
+}
+
+.hero .text .title-showcase > p {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Inter";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #909393;
+}
+
+.hero .text .title-showcase > p:not(:last-child)::after {
+    content: " | ";
+}
+
 .hero .text .hero-paragraph {
     line-height: normal;
     font-weight: normal;
-    font-size: 2rem;
+    font-family: "Segoe UI";
+    font-size: 1.25rem;
+    color: #b2b4b4;
     margin: 0px;
+    text-align: justify;
+    padding-right: 1rem;
 }
 
 .hero .collage {
@@ -145,7 +180,7 @@ body {
 }
 
 .quiz-cards > div > p {
-    font-family: "inter";
+    font-family: "Inter";
     font-size: 1.5rem;
     color: #DEE5E5;
     padding: 0;
@@ -166,7 +201,7 @@ body {
 
 .hello::after {
     content: "Hello,";
-    animation: helloAnimation 10s infinite cubic-bezier(0.11, 0, 0.5, 0);
+    animation: helloAnimation 10s infinite cubic-bezier(0.10, 0, 0.5, 0);
     z-index: 0;
 }
 
