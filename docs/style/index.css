@@ -12,6 +12,8 @@ body {
     flex-direction: row;
     margin: 0px;
     padding: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     height: 3.25rem;
     background-color: #33477E;
     position: sticky;
@@ -25,6 +27,31 @@ body {
 .top-bar > * {
     margin: 0px;
     padding: 0px;
+}
+
+.top-bar .page-name {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0.25rem
+}
+
+.top-bar .page-name > * {
+    font-family: "Inter";
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px;
+}
+
+.top-bar .page-name .crumb {
+    color: #9fc395;
+    
+    padding-bottom: 0.25rem;
+}
+
+.top-bar .navigation {
+    margin-left: auto;
+    max-width: 7rem;
 }
 
 .main-content {
@@ -42,18 +69,30 @@ body {
 .hero > * {
     padding: 0px;
     margin: 1rem;
+    animation: hero-transition linear;
+    animation-timeline: scroll();
+    animation-range: 10% 50%;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hero-transition {
+    to {
+        opacity: 0;
+    }
 }
 
 .hero .text {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 21rem;
     overflow-wrap: break-word;
     min-width: 21rem;
-    padding-top: 5rem;
+    padding-top: 4rem;
 }
 
-.hero .text > * {
+.hero .text > *, .hero .text .name-line > * {
     padding: 0px;
     margin: 0px;
     font-size: 4.35rem;
@@ -69,7 +108,7 @@ body {
     }
 }
 
-.hero .text > span {
+.hero .text .name-line > * {
     font-weight: lighter;
     line-height: 5rem;
 }
@@ -112,7 +151,13 @@ body {
     color: #b2b4b4;
     margin: 0px;
     text-align: justify;
-    padding-right: 1rem;
+    padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+    background-color: rgb(36, 43, 61);
+    border-radius: 2rem;
+    corner-shape: squircle;
+    flex-grow: 1;
+    margin-bottom: 5rem;
+    margin-right: 1rem;
 }
 
 .hero .collage {
@@ -121,7 +166,7 @@ body {
     flex-direction: row;
     align-items: center;
     flex-shrink: 1;
-    padding: 6rem 1rem 6rem 1rem;
+    padding: 5rem 1rem 5rem 1rem;
     gap: 1rem;
 }
 
@@ -152,6 +197,17 @@ body {
 
 .quizzes {
     padding: 0rem 2rem 0rem 2rem;
+    margin-top: -40rem;
+    animation: quizzes-transition linear;
+    animation-timeline: scroll();
+    animation-range: 30% 70%;
+    animation-fill-mode: forwards;
+}
+
+@keyframes quizzes-transition {
+    to {
+        margin-top: -55rem;
+    }
 }
 
 .quizzes > h1 {
@@ -193,6 +249,30 @@ body {
     height: auto;
 }
 
+.transition-wrapper-1 {
+    display: flex;
+    justify-content: end;
+    max-height: 1rem;
+}
+
+.section-transition-1 {
+    bottom: 0;
+    background-image: linear-gradient(rgb(50 50 50 / 0), rgb(0 0 0), rgb(0 0 0), rgb(51 71 126 / 0));
+    height: 50rem;
+    animation: transition linear;
+    animation-timeline: scroll();
+    animation-range: 10% 90%;
+    animation-fill-mode: forwards;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+
+@keyframes transition {
+    to {
+        translate: 0rem -80rem;
+    }
+}
+
 .hello {
     font-family: "Inter";
     font-weight: lighter;
@@ -201,15 +281,16 @@ body {
 
 .hello::after {
     content: "Hello,";
+    display: inline-block;
     animation: helloAnimation 10s infinite cubic-bezier(0.10, 0, 0.5, 0);
     z-index: 0;
 }
 
 @keyframes helloAnimation {
-    90% {
+    83.5% {
         opacity: 1;
     }
-    92% {
+    93% {
         opacity: 0;
     }
     100% {
@@ -221,13 +302,12 @@ body {
     3% {
         opacity: 1;
     }
-
-    15% {
+    8.5% {
         opacity: 1;
     }
     
 
-    17% {
+    18% {
         opacity: 0;
     }
     25% {
@@ -237,11 +317,13 @@ body {
         opacity: 1;
     }
 
-    40% {
+    33.5% {
         opacity: 1;
     }
 
-    42% {
+
+
+    43% {
         opacity: 0;
     }
     50% {
@@ -251,12 +333,13 @@ body {
         opacity: 1;
     }
 
-    65% {
+    58.5% {
         opacity: 1;
     }
 
+
     
-    67% {
+    68% {
         opacity: 0;
     }
     75% {
@@ -265,6 +348,10 @@ body {
     78% {
         opacity: 1;
     }
+}
+
+.footer {
+    height: 10rem;
 }
 
 @font-face {
